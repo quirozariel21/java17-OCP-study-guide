@@ -1,7 +1,7 @@
 import java.util.function.Supplier;
 
 /*
- Suppler function useful to get data, it does not have input parameters
+ Supplier function useful to get data, it does not have input parameters
  */
 public class SupplierExercise {
     public static void main(String... args) {

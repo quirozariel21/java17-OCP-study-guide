@@ -10,7 +10,7 @@ public class ReduceOperationEasy {
         //int total = str.map(String::length).reduce(0, (a, b) -> a + b);                   // OPTION 1
         //Optional<Integer> total = str.map(String::length).reduce((a, b) -> a + b);        // OPTION 2
         //int total = str.reduce(0, (id, s) -> id + s.length(), (a, b) -> a + b);           // OPTION 3
-        int total = str.reduce(0, (id, s) -> id + s.length(), Integer::sum);                // OPTION 3.1
+        int total = str.reduce(0, (id, s) -> id + s.length(), Integer::sum);                // OPTION 3.1 for use parallelStream()
         System.out.println(total);
     }
 }

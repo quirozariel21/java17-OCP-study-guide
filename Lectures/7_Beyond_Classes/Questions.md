@@ -13,7 +13,7 @@
 9: }
 ```
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 E. Four or more
 An enum must declare its values before any members. For this reason, lines 2 and 3 are reversed. Lin 5 is missing parentheses
 required for a record declaration. Line 6 is not allowed, as record do not allow instance variables. Line 8 is incorrect
@@ -21,7 +21,7 @@ because only static initializers, are allowed in record. Since there are at leas
 option E is correct.<br/>
 2. Which modifiers can be applied to a sealed subclass?
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 C. `sealed`
 D. `non-sealed`
 G. `final`
@@ -29,7 +29,7 @@ Sealed subclass must be declared final, sealed, non-sealed. <br/>
 3. Fill in the blanks: The____________________ access modifier allows access to everything the ___________
 access modifier does and more.
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 E. `public`,`private`
 The `public` access modifier allow access to members in the same class, package, subclass, or even classes in other packages,
 whereas the `private` modifier allows access only to members in the same class. Therefore, the `public` access modifier 
@@ -43,7 +43,7 @@ D. `private`
 E. `private static`
 F. None of the above
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 F. None of the above
 There is no modifier that can prevent a default method from being overridden in a class implementing an interface. <br/>
 5. What is the output of the Computer program?
@@ -66,7 +66,7 @@ public class Computer {
 }
 ```
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 C. `laptop-laptop-`
 Both objects are instances of the class *Laptop*. This means the overridden *startup()* method in the *Laptop* class gets 
 called both times thanks to polymorphism. <br/>
@@ -87,13 +87,13 @@ public class Cars {
 }
 ```
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 E. Five
 The *static* initializers is only run once, so faster is printed exactly once. The *drive()* method is called twice, 
 printing two lines each. Therefore, the program prints five lines. <br/>
 7. Which statements about `static` interface methods are correct?
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 B. A `static` interface method can be declared `private`
 D. A `static` interface method can be declared `public`
 F. A `static` interface method can be declared without an access modifier. <br/>
@@ -108,7 +108,7 @@ non-sealed class Mercury {}
 abstract non-sealed class Earth {}
 ```
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 A. Zero
 While the *permits* clause is optional for sealed classes with subclasses in the same file, the `extends` clause in each 
 subclass is not. For this reason, *Mercury*, *Venus*, and *Earth* do not compile. *Mars* also does not compile. When the 
@@ -129,14 +129,14 @@ public record Panda(String name) extends Animal {
 }
 ```
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 D. Exactly two lines need to be corrected for the program, to compile.
 Records are implicitly *final* and cannot be extended. For this reason, The *Panda* declaration does not compile. Setting a 
 value on `this.name` is not permitted in a compact constructor, although the constructor parameter name may be reassigned. The
 rest of the code compiles without issue. Since two lines don't compile, option D is correct. <br/>
 10. Which statements about instance keyword are correct?
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 B. The `this` keyword can be used to read all members declared in a parent class.
 E. The `this` keyword can be used to read `public` members in the direct parent class.
 Option E is correct, as *this* allows access to members declared in the class and those inherited from a parent. <br/>
@@ -177,7 +177,7 @@ public class Robot {
 }
 ```
 &emsp;&emsp;
-_Answer_
+__Answer__<br/>
 B. `5.0 bent!`
 First off, *Pump* is not a functional interface. The `toString()` method will be overridden by any class inheriting the 
 interface (via *lang.lang.Object*), so it does not count as an abstract method. On the other hand, Bend is a functional 

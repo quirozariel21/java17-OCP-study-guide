@@ -409,5 +409,41 @@ encapsulation prevents internal attributes of a class from being modified direct
  access to internal attributes, we can also maintain class data integrity between elements, making option C a true 
 statement. Option F is also a true statement about encapsulation, since well-encapsulated classes are often easier to use. 
 Encapsulation makes no guarantees about performance and concurrency, making option `B` on of the answer. Option `E` i the other 
-answer because it describes immutability, not encapsulation.
-26. 
+answer because it describes immutability, not encapsulation. <br/>
+26. Given the following method signature used in a class, which classes can call it?
+```java
+void run(String government)
+```
+&emsp;&emsp;
+_Answer_
+B. Classes in the same package
+The method signature has package, or default, access therefore, it is accessible to classes in the same package, making 
+option B the correct answer. <br/>
+27. Which is the first declaration to not compile?
+```java
+package desert;
+
+interface CanBurrow {
+    public abstract void burrow();
+} 
+
+@FunctionalInterfcae interface HashHardShell 
+extends CanBurrow { }
+
+abstract class Tortoise implements HashHardShell {
+    public abstract int toughness();
+}
+
+public class DesertTortoise extends Torsoise {
+    public int toughness() { return 11; }
+}
+```
+&emsp;&emsp;
+_Answer_
+D. `DesertTortoise`
+First, both *CanBurrow* and *HashHardShell* compile as functional interfaces since they contain exactly one *abstract* method, 
+although only the latter uses the optional `@FunctionalInterface` annotation. The declaration of these two interfaces, along 
+with the abstract class *Tortoise*, compile without issue. The class *DesertTortoise* inherits two abstract methods, one from 
+the interface *CanBurrow* and the other from the *abstract* parent class *Tortoise*. Since the class implements only one of them 
+and the class is concrete, the class declaration of *DesertTortoise* fails to compile, making option D the correct answer.
+28. 

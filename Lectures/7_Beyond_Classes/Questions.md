@@ -220,4 +220,194 @@ _Answer_
 D. `r4`
 The `use()` method has package level access in Tool, with the overridden version in Hammer reducing the visibility to
 private. This is an invalid override, making option D correct.
-15. 
+15. Which modifier can be applied to an `abstract` interface method?
+A. final
+B. interface
+C. protected
+D. volatile
+E. sealed
+F. None of the above
+&emsp;&emsp;
+_Answer_
+F. None of the above
+16. The following `Organ` class is included, unmodified, in a larger program at runtime. At most, how many classes can
+inherit from `Organ` (excluding `Organ` itself)?
+```java
+package body;
+public sealed class Organ {
+    sealed class Heart extends Organ {}
+    final class Lung extends Organ {}
+    static non-sealed class Stomach extends Organ {}
+    final class Valentine extends Heart {}
+}
+```
+&emsp;&emsp;
+_Answer_
+G. The number cannot be determined with the information given.
+Remember that the `permits` clause is optional if the sealed subclasses are in the same file. Given the class declaration, 
+exactly four subclasses inherit from Organ. The Stomach class is `non-sealed`, though, which means the larger program could 
+define additional classes in the same package that extend Stomach and inherit `Organ`. For this reason, option G is correct.
+17. Which are true of the following code? (Choose three)
+```java
+1:  class Penguin {
+2:     private enum Baby { EGG }
+3:     static class Chick { 
+4:        enum Baby { EGG }
+5:     }
+6:     public static void main(String[] args) {
+7:        boolean match = false;
+8:        Baby egg = Baby.EGG;
+9:        switch (egg) {
+10:          case EGG:
+11:             match = true;
+12:       } } }
+```
+&emsp;&emsp;
+_Answer_
+D. Removing `private` on line 2 would not create an additional compiler error.
+F. Removing the `static` modifier on line 3 would not create an additional compile error.
+Removing private on line 2 would not cause a compiler error in the main() method, making option D correct. Option F 
+is the final correct answer because a static type such as an enum can be defined in both inner and *static* nested classes.
+18. Which of the following class types cannot be marked `abstract`?
+&emsp;&emsp;
+_Answer_
+C.Anonymous class
+While an anonymous class can extend another class or implement an interface, it cannot be declared `abstract` since it 
+has no class name. For this reason, option C is correct. 
+19. Fill in the blanks: The_________________ access modifier allows access to everything the _____________________
+access modifier does and more.
+&emsp;&emsp;
+_Answer_
+C. protected, package 
+E. public, package
+F. public, protected
+The public access modifier is the broadest (es el mas amplio), making options E and F correct. The protected access 
+modifier adds on subclass access, making option C correct.
+20. How many of the following members of the `Telephone` interface are `public`?
+```java
+public interface Telephone {
+    static int call() { return 1; }
+    default void dial() {}
+    long answer();
+    String home = "555-555-5555";
+}
+```
+&emsp;&emsp;
+_Answer_
+E. Four
+All four members of the Telephone interface are implicitly *public*. Only *private* and *private* static interface methods are not 
+*public*, and they must be explicitly marked private.
+21. How many lines will not compile?
+```java
+11: public class PrintShop {
+12:    public void printVarargs(String... names) {
+13:         System.out.println(Arrays.toString(names));    
+14:    }
+15:    public void printArray(String[] names) {
+16:         System.out.println(Arrays.toString(names));    
+17:    }
+18:    public void stormy() {
+19:         printVarargs("Arlene");    
+20:         printVarargs(new String[]{"Bret"});
+21:         printVarargs(null);
+22:         printArray("Cindy");
+23:         printArray(new String[]{"Don"});
+24:         printArray(null);
+25:}}
+```
+&emsp;&emsp;
+_Answer_
+B. One
+From within a method, an array or varargs parameter is treated the same. However, there is a difference from the caller's 
+point of view. A varargs parameters can receive either an array or individual values, making 19 and 20 compile. However, an 
+array parameter can take only array, which permits line 23 but prevents line 22 from compiling. Both lines 21 nd 24 compile 
+because `null` can be passed to a method taking an array or vararg parameter. Since there is only one line that doesn't 
+compile, option B is the answer.
+22. Which statement about records are correct?
+&emsp;&emsp;
+_Answer_
+C. A record can implement interfaces
+D. A record can contain multiple regular constructors
+23. What is the output of the following application?
+
+```java
+interface Toy {
+    String play();
+}
+
+public class Gift {
+    public static void main(String[] matrix) {
+        abstract class Robot {
+        }
+
+        class Transformer extends Robot implements Toy {
+            public String name = "GiantRobot";
+            
+            public String play() {
+                return "DinosaurRobot";                 // y1
+            }
+        }
+        
+        Transformer prime = new Transformer() {
+          public String play() {return name; }          // y2
+        };
+        System.out.print(prime.play() + "." + name);
+    }
+}
+```
+&emsp;&emsp;
+_Answer_
+A. GianRobot
+B. GiantRobot DinosaurRobot
+C. DinosaurRobot
+D. The code does not compile because of line `y1`
+E. The code does not compile because of line `y2`
+F. None of the above
+The declaration of the local classes Robot and Transformer compile without issue. The only compilation problem in this 
+program is the last line of the `main()` method. The variable name is defined inside the local class and not accessible 
+outside class declaration without a reference to the local class. Due to scope, this last line of the main() method does 
+not compile, making option F the correct answer. Note that the first part of the `print()` statement in the main() 
+method, if the code compiled, prints `GiantRobot`. <br/>
+24. What is the output of the following application?
+```java
+package space;
+public class Bottle {
+    public static class Ship {
+        private enum Sail {                     // w1
+            TALL { protected int getHeight() { return 100;}},
+            SHORT { protected int getHeight() { return 2;}};
+            protected abstract int getHeight();
+        }
+        public Sail getSail() {
+            return Sail.TALL;
+        }
+    }
+    
+    public static void main(String[] stars) {
+        var bottle = new Bottle();
+        Ship q = bottle.new Ship();             // w2
+        System.out.print(q.getSail());
+    }
+}
+```
+&emsp;&emsp;
+_Answer_
+C. The code does not compile because of line `w2`
+The *Bottle* class includes a *static* nested class *Ship* that must be instantiated in a static manner. Line `w2` uses 
+an instance of Bottle to instantiate the *Ship*. Therefore, ine `w2` does not compile, and option C is the correct answer. <br/>
+25. Which of the following are not reasons to use encapsulation when designing a class? (Choose two)
+A. Improve security
+B. Increase concurrency and improve performance
+C. Maintain class data integrity of the data element
+D. Prevent users from modifying the internal attributes
+E. Prevent variable state from changing
+F. Promote usability by other packages
+&emsp;&emsp;
+_Answer_
+Option A is true because encapsulation improves security because instance variables cannot be accessed directly. Implementing
+encapsulation prevents internal attributes of a class from being modified directly, so option D is true statement. By preventing
+ access to internal attributes, we can also maintain class data integrity between elements, making option C a true 
+statement. Option F is also a true statement about encapsulation, since well-encapsulated classes are often easier to use. 
+Encapsulation makes no guarantees about performance and concurrency, making option `B` on of the answer. Option `E` i the other 
+answer because it describes immutability, not encapsulation.
+26. 

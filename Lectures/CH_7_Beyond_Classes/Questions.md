@@ -14,37 +14,38 @@
 ```
 &emsp;&emsp;
 __Answer__<br/>
-E. Four or more
-An enum must declare its values before any members. For this reason, lines 2 and 3 are reversed. Lin 5 is missing parentheses
+E. Four or more <br/>
+An enum must declare its values before any members. For this reason, lines 2 and 3 are reversed. Line 5 is missing parentheses
 required for a record declaration. Line 6 is not allowed, as record do not allow instance variables. Line 8 is incorrect
 because only static initializers, are allowed in record. Since there are at least four lines that contains errors,
 option E is correct.<br/>
-2. Which modifiers can be applied to a sealed subclass?
-&emsp;&emsp;
+
+2. Which modifiers can be applied to a sealed subclass? <br/>
 __Answer__<br/>
-C. `sealed`
-D. `non-sealed`
-G. `final`
+C. `sealed` <br/>
+D. `non-sealed` <br/>
+G. `final` <br/>
 Sealed subclass must be declared final, sealed, non-sealed. <br/>
 3. Fill in the blanks: The____________________ access modifier allows access to everything the ___________
-access modifier does and more.
+access modifier does and more. <br/>
 &emsp;&emsp;
 __Answer__<br/>
-E. `public`,`private`
+E. `public`,`private` <br/>
 The `public` access modifier allow access to members in the same class, package, subclass, or even classes in other packages,
 whereas the `private` modifier allows access only to members in the same class. Therefore, the `public` access modifier 
 allow access to everything the `private` does, and more. <br/>
+
 4. Which set of modifiers, when added to a `default` method within an interface, prevents it from being overridden by a 
 class implementing the interface?
-A. `const`
-B. `final`
-C. `static`
-D. `private` 
-E. `private static`
+A. `const` <br/>
+B. `final` <br/>
+C. `static` <br/>
+D. `private`  <br/>
+E. `private static` <br/>
 F. None of the above
 &emsp;&emsp;
 __Answer__<br/>
-F. None of the above
+F. None of the above <br/>
 There is no modifier that can prevent a default method from being overridden in a class implementing an interface. <br/>
 5. What is the output of the Computer program?
 ```java
@@ -67,12 +68,13 @@ public class Computer {
 ```
 &emsp;&emsp;
 __Answer__<br/>
-C. `laptop-laptop-`
+C. `laptop-laptop-` <br/>
 Both objects are instances of the class *Laptop*. This means the overridden *startup()* method in the *Laptop* class gets 
 called both times thanks to polymorphism. <br/>
-6. how many lines does the following code output?
+
+6. How many lines does the following code output?
 ```java
-public class Cars {
+public class Cars { 
     private static void drive() {
         {
             System.out.println("zoom");
@@ -88,15 +90,17 @@ public class Cars {
 ```
 &emsp;&emsp;
 __Answer__<br/>
-E. Five
+E. Five <br/>
 The *static* initializers is only run once, so faster is printed exactly once. The *drive()* method is called twice, 
 printing two lines each. Therefore, the program prints five lines. <br/>
+
 7. Which statements about `static` interface methods are correct?
 &emsp;&emsp;
 __Answer__<br/>
-B. A `static` interface method can be declared `private`
-D. A `static` interface method can be declared `public`
+B. A `static` interface method can be declared `private` <br/>
+D. A `static` interface method can be declared `public` <br/>
 F. A `static` interface method can be declared without an access modifier. <br/>
+
 8. Not counting the `Planet` declaration, how many declarations compile?
 Assume they are all declared within the same `.java` file.
 ```java
@@ -109,13 +113,15 @@ abstract non-sealed class Earth {}
 ```
 &emsp;&emsp;
 __Answer__<br/>
-A. Zero
+A. Zero <br/>
 While the *permits* clause is optional for sealed classes with subclasses in the same file, the `extends` clause in each 
 subclass is not. For this reason, *Mercury*, *Venus*, and *Earth* do not compile. *Mars* also does not compile. When the 
-*permits* clause is specified, all subclasses must be listed.
+*permits* clause is specified, all subclasses must be listed. <br/>
+
 9. What is the output of the following program?
 ```java
 record Animal(boolean isMammal) {}
+
 public record Panda(String name) extends Animal {
     public Panda() {
         this("TaiShan");
@@ -130,10 +136,11 @@ public record Panda(String name) extends Animal {
 ```
 &emsp;&emsp;
 __Answer__<br/>
-D. Exactly two lines need to be corrected for the program, to compile.
+D. Exactly two lines need to be corrected for the program, to compile. <br/>
 Records are implicitly *final* and cannot be extended. For this reason, The *Panda* declaration does not compile. Setting a 
 value on `this.name` is not permitted in a compact constructor, although the constructor parameter name may be reassigned. The
 rest of the code compiles without issue. Since two lines don't compile, option D is correct. <br/>
+
 10. Which statements about instance keyword are correct?
 &emsp;&emsp;
 __Answer__<br/>
@@ -439,11 +446,40 @@ public class DesertTortoise extends Torsoise {
 }
 ```
 &emsp;&emsp;
-_Answer_
-D. `DesertTortoise`
+__Answer__ <br/>
+D. `DesertTortoise` <br/>
 First, both *CanBurrow* and *HashHardShell* compile as functional interfaces since they contain exactly one *abstract* method, 
 although only the latter uses the optional `@FunctionalInterface` annotation. The declaration of these two interfaces, along 
 with the abstract class *Tortoise*, compile without issue. The class *DesertTortoise* inherits two abstract methods, one from 
 the interface *CanBurrow* and the other from the *abstract* parent class *Tortoise*. Since the class implements only one of them 
-and the class is concrete, the class declaration of *DesertTortoise* fails to compile, making option D the correct answer.
-28. 
+and the class is concrete, the class declaration of *DesertTortoise* fails to compile, making option D the correct answer. 
+<br/>
+28. Which is the first line to not compile?
+```java
+interface Building {
+    default Double getHeight() { return 1.0; }              // m1
+}
+interface Office {
+    public default String getHeight() { return null; }      // m2
+}
+abstract class Tower implements Building, Office {}         // m3
+public class Restaurant extends Tower {}                    // m4
+```
+&emsp;&emsp;
+__Answer__ <br/>
+C. Line `m3` <br/>
+The interface declarations compile without issue. When inheriting two default methods with the same signature, the `Tower` 
+class required to override both methods even if the class is marked `abstract`. For thi reason, line `m3` is the first line 
+that does not compile, and option C is correct. Note that there is no possible overridden method that can fulfill both 
+inherited default methods since the return types are not covariant. <br/>
+
+29. Fill in the blanks:_______________________________________ is used to call a constructor in the parent class, while
+_____________________________ is used to reference a member of the parent class.
+&emsp;&emsp;
+__Answer__ <br/>
+D. `super()`, `super` <br/>
+The `super()` statement is used to call a constructor in the parent class, while `super` is used to reference a member of 
+the parent class. The `this()` statement is used to call a constructor in the current class, while `this` is used to reference 
+a member of the current class. For these reason, option D is correct answer. <br/>
+
+30. 

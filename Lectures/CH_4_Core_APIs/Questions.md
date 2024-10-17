@@ -230,7 +230,105 @@ Option A does not compile because Java does not allow declaring different types 
 __Answer__<br/>
 D. `stripIndent()` <br/>
 F. `stripTrailing()` <br/>
+30. The United States observes daylight saving time on March 12, 2022, by moving the clocks forward an hour at 2.m. what does the 
+following code output? <br/>
+```java
+var localDate = LocalDate.of(2022, 3, 13);
+var localTime = LocalTime.of(13, 0);
+var zone = ZoneId.of("America/New_York");
+var z = ZonedDateTime.of(localDate, localTime, zone);
 
+var offset = z.getOffset();
+var duration = Duration.ofHours(3);
+var later = z.plus(duration);
 
+System.out.println(later.getHour() + " " + offset.equals(later.getOffset()));
+```
+&emsp;&emsp;
+__Answer__<br/>
+D. `16 true` <br/>
+Adding three hours to 13:00 makes it 16:00. While this date happens to be the start of daylight saving time, the change occurs at 2 a.m. This 
+code uses 13:00, which is 1 p.m. Since the calculation does ot cross 2 a.m., the fact that is the date that starts daylight 
+saving time is irrelevant.
+<br/>
+33. How many of the following lines contain a compiler error?
+```java
+double num1 = 2.718;
+double num2 = 2._718;
+double num3 = 2.7_1_8;
+double num4 = _2.718;
+```
+&emsp;&emsp;
+__Answer__<br/> 
+C. `2` <br/>
+Underscore are allowed between ay two digits in a numeric literal, causing `num4` to fail to compile. Additionally, underscore are not
+allowed adjacent to a decimal point, causing a compile error in `num2`.
+<br/>
+34. What is a possible result of the following?
+```java
+var monthPythonDay = LocalDate.of(2022, Month.MAY, 10);
+var time = LocalTime.of(5, 40);
+var dateTime = LocalDateTime.of(monthPythonDay, time);
+var duration = Duration.ofDays(1);
+var result = dateTime.minus(duration);
+System.out.println(result);
+```
+&emsp;&emsp;
+__Answer__<br/> 
+B. `2022-05-09T05:40`
+<br/>
+35. What is true of the following code? (Choose two.)
+```java
+var numPigeons = Long.________("100");
+System.out.println(numPigeons.toString());
+```
+&emsp;&emsp;
+__Answer__<br/>
+A. When `parseLong` fills in the blank, the code does not compile. <br/>
+F. When `valueOf` fills in the blank, the output is 100. 
+<br/>
+36. What is the output of the following application?
+```java
+public class Airplane {
+    static int start = 2;
+    final int end;
+    public Airplane(int x) {
+        x = 4;
+        end = x;
+    }
+    public void fly(int distance) {
+        System.out.print(end-start+"");
+        System.out.print(distance);
+    }
+    public static void main(String... start) {
+        new Airplane(10).fly(5);
+    }
+}
+```
+&emsp;&emsp;
+__Answer__<br/>
+A. `2 5` <br/>
+37. What is the output of the following?
+```java
+var date1 = LocalDate.of(2022, Month.MARCH, 3);
+var date2 = LocalDate.of(2022, Month.FEBRUARY, 31);
 
-
+        System.out.println(date1.equals(date1));
+```
+D. The code compiles but throws an exception at runtime. <br/>
+February has 28 or 29 days, depending on the year. There is never a February 31. Java throws a `DateTimeException` when you try 
+to create an invalid date.
+<br/>
+38. How many lines does this print?
+```java
+System.out.print("""
+    "ape"
+    "baboon"
+    "gorilla" """);
+```
+&emsp;&emsp;
+__Answer__<br/>
+A. Three <br/>
+This is a valid text block. Since the closing tripe quotes(""") are on the same line as the text, the code prints the three lines 
+of the text without adding a blank line and option A is the answer.
+<br/>

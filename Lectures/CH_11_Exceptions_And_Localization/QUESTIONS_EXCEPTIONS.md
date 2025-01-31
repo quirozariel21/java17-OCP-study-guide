@@ -59,13 +59,13 @@ public class Football {
 }
 ```
 &emsp;&emsp;
-**Answer**
-D. `WXZ` followed by a stack trace
-4. Which of the following types are not recommended to catch in your application?
-C. `Throwable`
-F. `Error`
+**Answer** <br/>
+D. `WXZ` followed by a stack trace <br/>
+4. Which of the following types are not recommended to catch in your application? <br/>
+C. `Throwable` <br/>
+F. `Error` <br/>
 While Exception and RuntimeException are commonly caught in Java applications, it is not recommended that Error and 
-Throwable(which includes Error) be caught. An Error often indicates a failure of the JVM, which cannot be recovered from.
+Throwable(which includes Error) be caught. An Error often indicates a failure of the JVM, which cannot be recovered from. <br/>
 5. What is the output of the following program?
 ```java
 package buffet;
@@ -89,10 +89,10 @@ public class Salad {
 }
 ```
 &emsp;&emsp;
-**Answer**
-E. The code does not compile.
+**Answer** <br/>
+E. The code does not compile. <br/>
 A variable declared before the start of a try-with-resources statement may be used if it is a `final` or 
-`effectively final`. Since `g` is modified after it is set, it is neither; therefore, the class does not compile.
+`effectively final`. Since `g` is modified after it is set, it is neither; therefore, the class does not compile. <br/>
 6. How many lines of text does the following program print?
 ```java
 package lighting;
@@ -114,10 +114,10 @@ public class Light {
 }
 ```
 &emsp;&emsp;
-**Answer**
-C. The code does not compile because of line y1.
+**Answer** <br/>
+C. The code does not compile because of line y1. <br/>
 The code does not compile because the variable `v` is used twice in the main() method, both in the method declararion 
-and in the catch block.
+and in the catch block. <br/>
 7. What is the output of the following application?
 ```java
 package bed;
@@ -139,20 +139,20 @@ public class Sleep {
 }
 ```
 &emsp;&emsp;
-**Answer**
-D. Does not compile because of line `x2`
+**Answer** <br/>
+D. Does not compile because of line `x2` <br/>
 The `finally` block on the `snore()` method throws a new checked exception on line x2, but there is no try-catch block 
-around it to handle it, not does the `snore()` method declare any checked exceptions. For these reason, line x2 does not compile.
+around it to handle it, not does the `snore()` method declare any checked exceptions. For these reason, line x2 does not compile. <br/>
 8. Which statements about `Closeable` and `AutoCloseable` are true?
 &emsp;&emsp;
-**Answer**
-B. `Closeable` extends `AutoCloseable`
-D. The `close()` method in a class that implements `Closeable` cannot throw an Exception
+**Answer** <br/>
+B. `Closeable` extends `AutoCloseable` <br/>
+D. The `close()` method in a class that implements `Closeable` cannot throw an Exception <br/>
 The `close()` method in `AutoCloseable` throws `Exception`, while the `close()` method in `Closeable` throws `IOException`. Since 
 `IOException`, is a subclass of `Exception`, both `close()` methods can throw an `IOException`. On the other hand, `Exception` 
 is not a subclass of `IOException`. For this reason, the `close()` method in a class that implements `Closeable` cannot throw 
-an instance of the `Exception` class, because it is an invalid override using broader exception type.
-9. What is the output of the following application?
+an instance of the `Exception` class, because it is an invalid override using broader exception type. <br/>
+9. What is the output of the following application? <br/>
 ```java
 package body;
 import java.io.IOException;
@@ -175,20 +175,20 @@ public class Heart extends Organ {
 }
 ```
 &emsp;&emsp;
-**Answer**
-D. The code does not compile
+**Answer** <br/>
+D. The code does not compile <br/>
 The code does not compile due to an invalid override of the `operate()` method. An overriden method must not throw any 
 new or broader checked exceptions than the method  it inherits. While both `IOException` and `Exception` are checked 
-exceptions, `Exception` is broader than `IOException`. 
-10. Which of the following are true of using a try-with-resource statement?
-A. it shortens the amount of code a developer must write.
-B. It is possible to manually close a resource before the end of the `try` block.
+exceptions, `Exception` is broader than `IOException`. <br/> 
+10. Which of the following are true of using a try-with-resource statement? <br/>
+A. it shortens the amount of code a developer must write. <br/>
+B. It is possible to manually close a resource before the end of the `try` block. <br/>
 &emsp;&emsp;
-**Answer**
+**Answer** <br/>
 Option A is correct and is one of the primary motivations for using a try-with resources statement. Option B is also 
 correct, although it is recommended that you let the try-with-resources statement automatically close the resource. The 
-`catch` blocks are run after the declared resources have been closed.
-11. What is the output of the following application?
+`catch` blocks are run after the declared resources have been closed. <br/>
+11. What is the output of the following application? <br/>
 ```java
 package game;
 public class BasketBall {
@@ -208,8 +208,8 @@ public class BasketBall {
 }
 ```
 &emsp;&emsp;
-**Answer**
-B. 1345
+**Answer** <br/>
+B. 1345 <br/>
 12. Assuming -g:vars is used when the code is compiled to include debug information, what is the output of the 
 following code snippet?
 ```java
@@ -220,14 +220,14 @@ following code snippet?
 45:     System,out.println("you passed!");    
 46: }
 ```
-A. A `NullPointerException` naming `mode` in the stack trace
-B. A `NullPointerException` naming `grade` in the stack trace
-C. A `NullPointerException` naming `average` in the stack trace
-D. A `NullPointerException` naming `garde`, `average`, and `mode` in the stack trace
+A. A `NullPointerException` naming `mode` in the stack trace <br/>
+B. A `NullPointerException` naming `grade` in the stack trace <br/>
+C. A `NullPointerException` naming `average` in the stack trace <br/>
+D. A `NullPointerException` naming `garde`, `average`, and `mode` in the stack trace <br/>
 E. None of above
 &emsp;&emsp;
-**Answer**
-E. None of above
+**Answer** <br/>
+E. None of above <br/>
 With a helpful `NullPointerException`, the program will print the variable that triggered the exception. In this case, 
 the first exception is on line 42. The `Integer` value of null is unboxed to an `int`, but since this fails, a `NullPointerException` 
 is thrown at runtime. Since the exception happens on the right side of the assignment, the name of the variable printed is null.
@@ -254,12 +254,12 @@ public class Translate {
 }
 ```
 &emsp;&emsp;
-**Answer**
-A. Hello
+**Answer** <br/>
+A. Hello <br/>
 The application compiles without issue and prints Hello. The `ReadSign` and `MakeSign` classes are both correctly implemented, 
 with both overriden version of `close()` dropping the checked exceptions. The try-with-resources statement is also correctly 
 implemented for twp resources and does not cause any compilation errors or runtime exceptions. Note that the semicolon (;) 
-after the second resource declaration is optional.
+after the second resource declaration is optional. <br/>
 14. What is the output of the following application?
 ```java
 package what;
@@ -285,6 +285,6 @@ public class Happening {
 }
 ```
 &emsp;&emsp;
-**Answer**
+**Answer** <br/>
 E.28134
 15. 

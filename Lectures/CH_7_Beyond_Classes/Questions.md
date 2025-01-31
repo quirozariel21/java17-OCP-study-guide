@@ -35,14 +35,14 @@ The `public` access modifier allow access to members in the same class, package,
 whereas the `private` modifier allows access only to members in the same class. Therefore, the `public` access modifier 
 allow access to everything the `private` does, and more. <br/>
 
-4. Which set of modifiers, when added to a `default` method within an interface, prevents it from being overridden by a 
-class implementing the interface?
+4. Which set of modifiers, when added to a `default` method within an interface, prevents it from being overridden by a class 
+implementing the interface? 
 A. `const` <br/>
 B. `final` <br/>
 C. `static` <br/>
 D. `private`  <br/>
 E. `private static` <br/>
-F. None of the above
+F. None of the above  <br/>
 &emsp;&emsp;
 __Answer__<br/>
 F. None of the above <br/>
@@ -94,7 +94,7 @@ E. Five <br/>
 The *static* initializers is only run once, so faster is printed exactly once. The *drive()* method is called twice, 
 printing two lines each. Therefore, the program prints five lines. <br/>
 
-7. Which statements about `static` interface methods are correct?
+7. Which statements about `static` interface methods are correct? <br/>
 &emsp;&emsp;
 __Answer__<br/>
 B. A `static` interface method can be declared `private` <br/>
@@ -141,11 +141,11 @@ Records are implicitly *final* and cannot be extended. For this reason, The *Pan
 value on `this.name` is not permitted in a compact constructor, although the constructor parameter name may be reassigned. The
 rest of the code compiles without issue. Since two lines don't compile, option D is correct. <br/>
 
-10. Which statements about instance keyword are correct?
+10. Which statements about instance keyword are correct? <br/>
 &emsp;&emsp;
 __Answer__<br/>
-B. The `this` keyword can be used to read all members declared in a parent class.
-E. The `this` keyword can be used to read `public` members in the direct parent class.
+*B.* The `this` keyword can be used to read all members declared in a parent class. <br/>
+*E.* The `this` keyword can be used to read `public` members in the direct parent class. <br/>
 Option E is correct, as *this* allows access to members declared in the class and those inherited from a parent. <br/>
 11. What is the output of the following application?
 ```java

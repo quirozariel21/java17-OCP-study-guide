@@ -142,14 +142,14 @@ B. `Colors_CN.properties` <br/>
 C. `Colors.properties` <br/>
 D. `Colors_default.properties` <br/>
 E. `Colors_en_CN.properties` <br/>
-F. None of the above
+F. None of the above <br/>
 &emsp;&emsp;
 **Answer** <br/>
 A. Java starts out by looking for a properties file with the requested locale, which in this case is the `zn_CN` language 
 and country. It doesn't find it, so it moves onto the locale with just a language code `zn`, which it also does not find. 
 It then moves on to the default locale `en_US`, but there is still no match. It drops the country code and does find a 
 match with `en`, making the option A correct. <br/> 
-10. What is the result of running this code?
+**10.** What is the result of running this code?
 ```java
 12: LocalDate pieDay = LocalDate.of(2022, Month.JANUARY, 23);
 13: LocalTime midnight = LocalTime.of(0, 0);
@@ -166,7 +166,7 @@ match with `en`, making the option A correct. <br/>
 D. The code throws an exception line 20. <br/>
 The `DateTimeFormatter` is created with `ofLocalizedDate()`. It knows how to format date fields but not time fields.
 A `LocalTime` object does not have any date fields so the formatter throws an `UnsupportedTemporalTypeException`. <br/>
-11. For currency, the United States uses the `$` symbol, the UK uses the `£` symbol, and Germany uses the `€` symbol. 
+**11.** For currency, the United States uses the `$` symbol, the UK uses the `£` symbol, and Germany uses the `€` symbol. 
 Given this information, what is the expected output of the following code snippet?
 ```java
 Locale.setDefault(Locale.US);
@@ -179,7 +179,7 @@ System.out.println(NumberFormat.getCurrencyInstance().format(6.95));
 B. `6,95 €` <br/>
 While three distinct locale values are set, the output is used for formatting text is `Category.FORMAT`. For this reason, 
 the `GERMANY` locale is used to format the data with `€` symbol. <br/>
-12. What is the output of the following code snippet?
+**12.** What is the output of the following code snippet?
 ```java
 var x = Locale.of(2022, 3, 1);
 var y = LocalDateTime.of(2022, 1, 1, 2, 55);
